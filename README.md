@@ -16,7 +16,7 @@ Django-проект для разработки веб-приложения.
 
 ## Предварительные требования
 
-- Python 3.8 или выше
+- Python 3.9 или выше
 - Git
 - Виртуальное окружение (virtualenv)
 
@@ -27,7 +27,6 @@ Django-проект для разработки веб-приложения.
 python -m venv venv
 .\venv\Scripts\activate.bat
 pip install -r requirements.txt
-python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
@@ -35,7 +34,16 @@ python manage.py runserver
 ```bash
 python manage.py qcluster
 ```
+
 Перейдите по адресу http://127.0.0.1:8000/
+
+Для добавления страниц и контента необходимо создать суперпользователя с любыми логином почтой и паролем.
+```bash
+python manage.py createsuperuser
+```
+затем перейти по адресу http://127.0.0.1:8000/admin/ и залогиниться.
+
+Для просмотра добавленных страниц и контента перейти по адресу http://localhost:8000/api/pages/?format=api
 ## Запуск тестов
 ```bash
 python manage.py test content.tests
